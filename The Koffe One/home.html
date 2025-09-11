@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Koffee One</title>
+    <!-- Încarcă Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Încarcă fonturile elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <!-- Încarcă Font Awesome pentru iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: #D4AF37;
+            /* Text alb-argintiu */
+            background-color: #121212;
+            /* Fundal negru profund */
+            overflow-x: hidden;
+        }
+        h2 {
+            font-family: 'roman', serif;    
+            color: #e2e2e2;
+            font-size: 300px;
+            text-shadow: 2px 2px 4px rgba(185, 43, 43, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .text-gold {
+            color: #D4AF37;
+        }
+
+        .border-gold {
+            border-color: #D4AF37;
+        }
+
+        .bg-gold {
+            background-color: #D4AF37;
+        }
+
+        /* Animația de preîncărcare */
+        #preloader {
+            background: #121212;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease-out;
+            opacity: 1;
+        }
+
+        #preloader-logo {
+            animation: spin 2s linear infinite, growAndShrink 2s ease-in-out infinite;
+        }
+
+        @keyframes spin {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes growAndShrink {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        /* Animația de rotație pentru logo-ul principal */
+        @keyframes logo-spin {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .logo-rotate {
+            animation: logo-spin 4s linear infinite;
+        }
+
+        /* Stil pentru fundalul cu imagine de fundal */
+        .background-image {
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            height: 100vh;
+        }
+
+        /* Stiluri pentru butoanele de social media */
+        .social-icon:hover {
+            transform: scale(1.2);
+        }
+        /* Stil pentru punctele active din carusel */
+        .active-dot {
+            background-color: #D4AF37;
+        }
+        .carousel-container {
+            position: relative;
+            max-width: 800px; /* Sau orice altă lățime preferată */
+            margin: auto;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.08);
+        }
+       
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: #E6E6E6;
+            /* Text alb-argintiu */
+            background-color: #121212;
+            /* Fundal negru profund */
+            overflow-x: hidden;
+        }
+
+        .great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+        
+      
+
+        .text-gold {
+            color: #D4AF37;
+        }
+         /* Stil pentru imaginea de fundal a secțiunii de introducere */
+        .background-image {
+            background-image: url('images/cap 2.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            height: 100vh; /* Ocupă întreaga înălțime a ecranului */}
+     
+    </style>
+</head>
+
+<body class="bg-[#121212] font-['Cormorant Garamond'] text-[#E6E6E6] overflow-x-hidden">
+
+    <!-- Preloader -->
+    <div id="preloader" class="fixed inset-0 bg-[#121212] flex justify-center items-center z-[9999]">
+        <img id="preloader-logo" src="images/logo.jpg" alt="Aura Logo" class="w-24 h-24 rounded-full">
+    </div>
+  
+    <!-- Antet (Navigare) -->
+    <header class="bg-black text-gold-200 p-4 md:p-8 lg:p-16 fixed w-full z-10 rounded-b-xl shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Logo cu animație de rotație -->
+            <a href="#" class="flex items-center space-x-2">
+                <img src="images/logo.jpg" alt="Aura Logo"
+                    class="h-20 w-20 rounded-full logo-rotate">
+                <span class="text-2xl font-bold great-vibes">The Koffee One</span>
+            </a>
+
+            <!-- Meniu Desktop -->
+            <div class="hidden md:flex space-x-6 text-xl">
+                <a href="meniu.html"hover:text-gold transition duration-300">Meniul Nostru</a>
+                <a href="despre noi.html"hover:text-gold transition duration-300">Despre Noi</a>
+                <a href="contact.html" class="hover:text-gold transition duration-300">Contact</a>
+            </div>
+
+            <!-- Buton meniu mobil -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-gold">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+    </header>
+    <br>
+    <br>    
+
+    <!-- Meniu mobil (ascuns) -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-64 bg-black z-20 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center py-10 rounded-l-xl shadow-lg">
+        <button id="close-menu-button" class="absolute top-4 right-4 text-gray-400 hover:text-gold">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <a href="#" class="flex items-center space-x-2 mb-8">
+            <img src="images/logo.jpg" alt="Aura Logo" class="h-10 w-10 rounded-full logo-rotate">
+            <span class="text-2xl font-bold great-vibes">The Koffee One</span>
+        </a>
+        <a href="produse.html" class="block py-2 text-xl hover:text-gold transition duration-300">Produse</a>
+        <a href="despre noi.html" class="block py-2 text-xl hover:text-gold transition duration-300">Despre Noi</a>
+        <a href="contact.html"block py-2 text-xl hover:text-gold transition duration-300">Contact</a>
+    </div>
+
+         <!-- Secțiunea de introducere cu imagine de fundal -->
+    <section class="background-image flex items-center justify-center text-center text-white relative">
+        <div class="bg-black/50 p-6 md:p-12 rounded-xl shadow-2xl backdrop-blur-sm">
+
+            <h1 class="text-5xl md:text-7xl font-bold great-vibes text-gold leading-tight">The Koffee One</h1>
+            <p class="mt-4 text-xl md:text-2xl font-light">
+                <h2>The Coffe & Beauty Space</h2>
+                <H2>Where Beauty Meets Coffee</H2>
+            <a href="contact.html"
+                class="mt-8 inline-block px-8 py-3 bg-gold text-black font-semibold rounded-full shadow-lg hover:bg-yellow-600 transition duration-300 transform hover:scale-105">
+                Rezervă o masă
+            </a>
+        </div>
+    </section>
+
+  
+        <!-- Secțiunea Despre Noi -->
+        <section id="about" class="py-16 px-4 md:px-8 lg:px-16 text-center">
+            <h2 class="text-4xl great-vibes text-[#D4AF37]">Despre Noi</h2>
+            <p class="mt-4 text-lg font-light text-gray-400 max-w-2xl mx-auto">
+                The KOffee One este mai mult decât o cafenea; este un refugiu urban unde stilul se întâlnește cu confortul,
+                și fiecare detaliu este gândit pentru o experiență de neuitat.
+            </p>
+        </section>
+
+  <!-- Secțiunea Galerie/Slideshow -->
+        <section id="gallery" class="py-20 px-4 md:px-8 bg-[#1a1a1a]">
+            <div class="container mx-auto text-center max-w-6xl">
+                <h2 class="text-4xl great-vibes text-[#FFD700] mb-4">Galerie</h2>
+                <div class="h-1 w-24 bg-[#D4AF37] mx-auto mb-12"></div>
+
+                <!-- Containerul slideshow cu lățime redusă -->
+                <!-- Am micșorat lățimea maximă a containerului slideshow pentru a face imaginile mai mici. -->
+                <div class="slideshow-container relative max-w-[700px] mx-auto rounded-xl overflow-hidden shadow-2xl">
+
+                    <!-- Imagini și textul aferent -->
+                    <div class="mySlides fade">
+                        <img src="images/nature 1.png"
+                            class="w-full h-auto" />
+                    </div>
+                     <div class="mySlides fade">
+                        <img src="images/doza.jpg"
+                            class="w-full h-auto" />
+                    </div>
+
+
+                    <div class="mySlides fade">
+                        <img src="images/nature 2.jpg" class="w-full h-auto" />
+                    </div>
+
+                    <div class="mySlides fade">
+                        <img src="images/nature 3.png"
+                            class="w-full h-auto" />
+                    </div>
+                    
+                    <div class="mySlides fade">
+                        <img src="images/nature 4.jpg"
+                            class="w-full h-auto" />
+                    </div><div class="mySlides fade">
+
+                        <img src="images/nature 5.jpg"
+                            class="w-full h-auto" />
+                    </div>
+                    <div class="mySlides fade">
+                        <img src="images/nature 6.jpg"
+                            class="w-full h-auto" />
+                    </div>
+                    
+                    
+                    
+                                       
+
+                    
+                    
+                    
+
+
+                    <!-- Butoanele de control (prev/next) -->
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>
+                </div>
+                <br>
+
+                <!-- Punctele de navigare -->
+                <div class="dot-container">
+                    <span class="dot" onclick="currentSlide(1)"></span>
+                    <span class="dot" onclick="currentSlide(2)"></span>
+                    <span class="dot" onclick="currentSlide(3)"></span>
+                </div>
+            </div>
+        </section>
+        <!-- Secțiunea Contact -->
+        <section id="contact" class="py-16 px-4 md:px-8 lg:px-16 text-center">
+            <h2 class="text-4xl great-vibes text-[#D4AF37]">Contact</h2>
+            <p class="mt-4 text-lg font-light text-gray-400 max-w-2xl mx-auto">
+                Ne poți găsi oricând. Suntem gata să-ți răspundem la întrebări sau să-ți primim comanda.
+            </p>
+            <div class="mt-8 text-xl font-light">
+                <p>Strada Victoriei , Nr. 34A, Negresti Oas</p>
+                <p class="mt-2">Telefon: 40758383638
+                <p class="mt-2">Email:  Emilian_matei10@yahoo.com</p>
+            </div>
+            <div class="flex justify-center mt-6 space-x-4">
+                <a href="https://www.facebook.com/matei.emilian1" class="text-gray-400 hover:text-[#D4AF37] social-icon"><i
+                        class="fab fa-facebook text-2xl"></i></a>
+                <a href="https://www.instagram.com/the_koffee_one/" class="text-gray-400 hover:text-[#D4AF37] social-icon"><i
+                        class="fab fa-instagram text-2xl"></i></a>
+                
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="bg-gray-900 text-gray-400 py-8 px-4 md:px-8 lg:px-16 text-center rounded-t-xl">
+          
+                <p>&copy; The Koffee One . Toate drepturile rezervate.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Ascunde preloader-ul după un anumit timp și afișează conținutul paginii
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            const body = document.getElementById('main-content');
+
+            setTimeout(() => {
+                preloader.style.display = 'none';
+                body.style.visibility = 'visible';
+                body.style.opacity = '1';
+            }, 2500); // Durata totală a animației
+        });
+
+
+        // Gestionează meniul mobil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuButton = document.getElementById('close-menu-button');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+        }
+
+        if (closeMenuButton && mobileMenu) {
+            closeMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        }
+
+        // Închiderea meniului când se dă clic pe un link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu) {
+                    mobileMenu.classList.add('translate-x-full');
+                }
+            });
+        });
+
+        // Logica pentru slideshow
+        let slideIndex = 1;
+        showSlides(slideIndex);
+
+        // Funcții pentru a naviga prin slideshow
+        function plusSlides(n) {
+            showSlides(slideIndex += n);
+        }
+
+        function currentSlide(n) {
+            showSlides(slideIndex = n);
+        }
+
+        function showSlides(n) {
+            let i;
+            let slides = document.getElementsByClassName("mySlides");
+            let dots = document.getElementsByClassName("dot");
+
+            // Reîncepe de la 1 dacă ajunge la final
+            if (n > slides.length) {
+                slideIndex = 1
+            }
+            // Trece la ultimul slide dacă se navighează înapoi de la primul
+            if (n < 1) {
+                slideIndex = slides.length
+            }
+
+            // Ascunde toate slide-urile
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+
+            // Elimină clasa 'active-dot' de la toate punctele
+            for (i = 0; i < dots.length; i++) {
+                dots[i].classList.remove("active-dot");
+            }
+
+            // Verifică dacă slide-ul și punctul există înainte de a le afișa
+            if (slides[slideIndex - 1]) {
+                slides[slideIndex - 1].style.display = "block";
+            }
+            if (dots[slideIndex - 1]) {
+                // Adaugă clasa 'active-dot' la punctul corespunzător
+                dots[slideIndex - 1].classList.add("active-dot");
+            }
+        }
+
+        // Slideshow automat (optional)
+        // Elimină acest bloc dacă nu dorești ca imaginile să se schimbe singure
+        setInterval(() => {
+            plusSlides(1);
+        }, 5000); // Schimbă imaginea la fiecare 5 secunde
+
+
+        // LOGICA NOUĂ PENTRU EDITORUL DE IMAGINE
+
+        // Obține referințe la elementele DOM
+        const editableImage = document.getElementById('editable-image');
+        const enlargeButton = document.getElementById('enlarge-button');
+        const shrinkButton = document.getElementById('shrink-button');
+        const sizeDisplay = document.getElementById('image-size-display');
+
+        // Dimensiunile inițiale ale imaginii
+        let currentWidth = 600;
+        let currentHeight = 400;
+
+        // Factorul de redimensionare
+        const resizeStep = 50;
+
+        // Funcția pentru a actualiza afișarea dimensiunilor
+        function updateSizeDisplay() {
+            sizeDisplay.textContent = `${currentWidth}x${currentHeight}`;
+        }
+
+        // Listener pentru butonul de mărire
+        enlargeButton.addEventListener('click', () => {
+            currentWidth += resizeStep;
+            currentHeight += resizeStep * (400 / 600); // Menține raportul de aspect
+            editableImage.style.width = `${currentWidth}px`;
+            editableImage.style.height = `${currentHeight}px`;
+            updateSizeDisplay();
+        });
+
+        // Listener pentru butonul de micșorare
+        shrinkButton.addEventListener('click', () => {
+            if (currentWidth > resizeStep * 2) { // Asigură că imaginea nu devine prea mică
+                currentWidth -= resizeStep;
+                currentHeight -= resizeStep * (400 / 600); // Menține raportul de aspect
+                editableImage.style.width = `${currentWidth}px`;
+                editableImage.style.height = `${currentHeight}px`;
+                updateSizeDisplay();
+            }
+        });
+
+    </script>
+</body>
+
+</html>
