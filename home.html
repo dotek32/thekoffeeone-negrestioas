@@ -458,7 +458,32 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             }
         }
 
-       
+       // NEW: Swipe functionality for mobile devices
+    let touchstartX = 1;
+    let touchendX = 0;
+
+    const slideshowContainer = document.querySelector('.slideshow-container');
+
+    slideshowContainer.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX;
+    });
+
+    slideshowContainer.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX;
+        handleGesture();
+    });
+
+    function handleGesture() {
+        if (touchendX < touchstartX) {
+            // Swiped left
+            plusSlides(1);
+        }
+
+        if (touchendX > touchstartX) {
+            // Swiped right
+            plusSlides(-1);
+        }
+    }
 
 
         // LOGICA NOUĂ PENTRU EDITORUL DE IMAGINE
