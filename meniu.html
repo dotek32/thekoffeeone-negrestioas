@@ -139,6 +139,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
             margin: 40px 0;
         }
        
+       
 
     </style>
     <!-- Meta Pixel Code -->
@@ -181,7 +182,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <header class="bg-black text-gold-200 p-4 md:p-8 lg:p-16 fixed w-full z-10 rounded-b-xl shadow-lg">
         <nav class="container mx-auto flex justify-between items-center">
             <!-- Logo cu animație de rotație -->
-            <a href="#" class="flex items-center space-x-2">
+            <a href="home.html" class="flex items-center space-x-2">
                 <img src="images/logo.jpg" alt="Aura Logo"
                     class="h-20 w-20 rounded-full logo-rotate">
                 <span class="text-2xl font-bold great-vibes">The Koffee One</span>
@@ -204,12 +205,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <br>    
 
     <!-- Meniu mobil (ascuns) -->
-    < <div id="mobile-menu"
+     <div id="mobile-menu"
         class="fixed inset-y-0 right-0 w-64 bg-black z-20 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center py-10 rounded-l-xl shadow-lg">
         <button id="close-menu-button" class="absolute top-4 right-4 text-gray-400 hover:text-gold">
             <i class="fas fa-times text-2xl"></i>
         </button>
-        <a href="#" class="flex items-center space-x-2 mb-8">
+        <a href="home.html" class="flex items-center space-x-2 mb-8">
             <img src="images/logo.jpg" alt="Aura Logo" class="h-10 w-10 rounded-full logo-rotate">
             <span class="text-2xl font-bold great-vibes">The Koffee One</span>
         </a>
@@ -242,9 +243,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 Descoperă selecția noastră de cafele artizanale, băuturi răcoritoare și gustări delicioase, create pentru
                 a-ți oferi o experiență de neuitat.
             </p>
-
+            
+            <h2 class="great-vibes text-4xl text-center text-gold mb-4">Cafea</h2>
+<hr>
+<br>
             <!-- Grilă de produse -->
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
                 <!-- Produs 1 -->
                 <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
                     <img src="images/expresso.jpg" alt="Espresso" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/expresso.jpg')">
@@ -256,41 +260,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                     </div>
                 </div>
 
-                <!-- Produs 2 -->
+                  <!-- Produs 1.5 -->
                 <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-                    <img src="images/latte.jpg" alt="Latte" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/latte.jpg')">
-                    <h3 class="text-2xl font-bold text-white mb-2">Ron Latte</h3>
-                    <p class="text-gray-400 mb-4">Un amestec perfect de espresso și lapte spumat cremos.</p>
+                    <img src="images/double.jpg" alt="Espresso" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/expresso.jpg')">
+                    <h3 class="text-2xl font-bold text-white mb-2">Espresso Double</h3>
+                    <p class="text-gray-400 mb-4">O cafea tare și aromată, preparată la perfecție.</p>
                     <div class="flex justify-between items-center">
                         <span class="text-gold text-2xl font-bold"></span>
-                       
+                        
                     </div>
                 </div>
 
                 <!-- Produs 3 -->
-                <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-                    <img src="images/capuccino.jpg" alt="Cappuccino" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/capuccino.jpg')">
-                    <h3 class="text-2xl font-bold text-white mb-2">Ron Cappuccino</h3>
-                    <p class="text-gray-400 mb-4">Bucură-te de spuma bogată și gustul echilibrat.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gold text-2xl font-bold"></span>
-                       
-                    </div>
-                </div>
-
-                <!-- Produs 4 -->
-                <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-                    <img src="images/ron expreso.jpg" alt="Muffin" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/ron expreso.jpg')">
-                    <h3 class="text-2xl font-bold text-white mb-2">Ron Espresso</h3>
-                    <p class="text-gray-400 mb-4">Ideal pentru a însoți cafeaua de dimineață.</p>
-                    <div class="flex justify-between items-center">
-                        <span class="text-gold text-2xl font-bold"></span>
-                        <a href="#"
-                            class="bg-gold text-black py-2 px-6 rounded-full font-semibold hover:bg-white transition duration-300"></a>
-                    </div>
-                </div>
-
-                <!-- Produs 5 -->
                 <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
                     <img src="images/cortado.jpg" alt="Croissant" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/cortado.jpg')">  
                     <h3 class="text-2xl font-bold text-white mb-2">Cortado</h3>
@@ -301,8 +282,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             class="bg-gold text-black py-2 px-6 rounded-full font-semibold hover:bg-white transition duration-300"></a>
                     </div>
                 </div>
-
-                <!-- Produs 6 -->
+                 <!-- Produs 4 -->
                 <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
                     <img src="images/flat white.jpg "alt="Croissant" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/flat white.jpg')">
                     <h3 class="text-2xl font-bold text-white mb-2">Flat White</h3>
@@ -313,7 +293,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             class="bg-gold text-black py-2 px-6 rounded-full font-semibold hover:bg-white transition duration-300"></a>
                     </div>
                 </div>
-                      <!-- Produs 7 -->
+                       <!-- Produs 5 -->
                 <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
                     <img src="images/americano.jpg" alt="Ceai" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/americano.jpg')">
                     <h3 class="text-2xl font-bold text-white mb-2">Americano</h3>
@@ -324,21 +304,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             class="bg-gold text-black py-2 px-6 rounded-full font-semibold hover:bg-white transition duration-300"></a>
                     </div>
                 </div>
-                      <!-- Produs 8 -->
+                <!-- Produs 6 -->
                 <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
-                    <img src="images/ceai chai.jpg" alt="Ceai" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/ceai chai.jpg')">
-                         <h3 class="text-2xl font-bold text-white mb-2">Ceai Chai</h3>
-                    <p class="text-gray-400 mb-4">Este o băutură tradițională din India, unde "chai" înseamnă "ceai". </p>
+                    <img src="images/capuccino.jpg" alt="Cappuccino" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/capuccino.jpg')">
+                    <h3 class="text-2xl font-bold text-white mb-2"> Cappuccino</h3>
+                    <p class="text-gray-400 mb-4">Bucură-te de spuma bogată și gustul echilibrat.</p>
                     <div class="flex justify-between items-center">
                         <span class="text-gold text-2xl font-bold"></span>
-                        <a href="#"
-                            class="bg-gold text-black py-2 px-6 rounded-full font-semibold hover:bg-white transition duration-300"></a>
-                    </div> 
-                    </div>  
-                     <!-- Produs 9 -->
+                       
+                    </div>
+                </div>
+
+                <!-- Produs 7 -->
+                <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                    <img src="images/latte.jpg" alt="Latte" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/latte.jpg')">
+                    <h3 class="text-2xl font-bold text-white mb-2">Latte</h3>
+                    <p class="text-gray-400 mb-4">Un amestec perfect de espresso și lapte spumat cremos.</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gold text-2xl font-bold"></span>
+                       
+                    </div>
+                </div>
+                       <!-- Produs 8 -->
                 <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
                     <img src="images/zmeura.jpg" alt="Ceai" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/zmeura.jpg')">
-                    <h3 class="text-2xl font-bold text-white mb-2">Raspberry</h3>
+                    <h3 class="text-2xl font-bold text-white mb-2">Cmai Raspberry</h3>
                     <p class="text-gray-400 mb-4">Cubulețele de măr, frunzele de mur și coaja de portocală oferă un amestec de arome de fructe care conferă acestui ceai caracterul său delicios</p>
                     <div class="flex justify-between items-center">
                         <span class="text-gold text-2xl font-bold"></span>
@@ -346,110 +336,128 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                             class="bg-gold text-black py-2 px-6 rounded-full font-semibold hover:bg-white transition duration-300"></a>
                     </div>
                 </div>
+
+                
+                      <!-- Produs  9-->
+                <div class="card p-6 rounded-xl shadow-lg transform hover:scale-105 transition duration-300">
+                    <img src="images/Matcha-latte-1200x800.jpg" alt="Ceai" class="w-full h-48 object-cover rounded-xl mb-4 cursor-pointer" onclick="openModal('images/ceai chai.jpg')">
+                         <h3 class="text-2xl font-bold text-white mb-2">Matcha Latte</h3>
+                    <p class="text-gray-400 mb-4">Matcha latte este o băutură cremoasă, reconfortantă și bogată în antioxidanți, preparată din pudră de ceai verde matcha (din frunze cultivate la umbră), lapte (sau alternative vegetale) și, uneori, îndulcitori naturali </p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-gold text-2xl font-bold"></span>
+                        <a href="#"
+                            class="bg-gold text-black py-2 px-6 rounded-full font-semibold hover:bg-white transition duration-300"></a>
+                    </div> 
+                
+
+              
             </div>
+
+            
         </section>
+        <hr>
+        <br>
          <!-- Sectiunea Bauturi Racoritoare -->
             <section class="bg-[#1e1e1e] rounded-xl shadow-lg p-6">
-                <h3 class="text-3xl font-semibold text-[#D4AF37] mb-6 border-b border-[#D4AF37] pb-2 text-center">Bauturi Racoritoare</h3>
+                <h2 class="great-vibes text-4xl text-center text-gold mb-4">Bauturi Racoritoare</h2>
                 <ul class="space-y-4">
                     <li class="flex justify-between items-center text-lg">
-                        <span>Coca Cola / Fanta </span>
+                        <span>Apa Plata Aqua Carpatica 0.5l </span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Everest Tonic</span>
+                        <span>Apa Plata Borsec 0.5l</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Schweppes Bitter</span>
+                        <span>Coca COla 0.33(DOza/Sticla)</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Schweppes Mojito</span>
+                        <span>Coca Cola Zero 0.33(Doza)</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Schweppes Mandarin</span>
+                        <span>Fanta 0.33(Doza)</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Borsec Apa Carbo</span>
+                        <span>Fanta Madness 0.5l</span>
                         <span></span>
                     </li>
                      <li class="flex justify-between items-center text-lg">
-                        <span>Aqua Carpatica Plata</span>
+                        <span>Pepsi 0.33(Doza/Sticla)</span>
                         <span>
                     </li>
                      <li class="flex justify-between items-center text-lg">
-                        <span>Aqua Carpatica Carbo</span>
+                        <span>Schweppes Bitter,Mojito,Mandarin(Doza) 0.33l</span>
                         <span></span>
                     </li>
                      <li class="flex justify-between items-center text-lg">
-                        <span>Aqua Carpatica Zmeura</span>
+                        <span>Everest Tonic 0.33l</span>
                         <span></span>
                          <li class="flex justify-between items-center text-lg">
-                        <span>Aqua Carpatica Pere-Mango</span>
+                        <span>Aqua Carpatica Carbo 0.5l</span>
                         <span></span>
                     </li>
                      <li class="flex justify-between items-center text-lg">
-                        <span>Borsec Apa Carbo</span>
+                        <span>Borsec Carbo 0.5l </span>
                         <span></span>
                     </li>
                      <li class="flex justify-between items-center text-lg">
-                        <span>Cappy</span>
+                        <span>Aqua Carpatica Zmeura,Pier-Mango 0.33l</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Nestea</span>
+                        <span>Cappy Pulpy,Piersica,Portocala 0.33l</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Hell</span>
+                        <span>Nestea Fructe de Padure,Lamaie 0.5l</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Red Bull</span>
+                        <span>Red Bull ,Afine,Tropical,Pepene </span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Pepsi 0.33</span>
+                        <span>Hell Energy Cirese ,Mar</span>
                         <span></span>
                     </li>
-                    <li class="flex justify-between items-center text-lg">
-                        <span>Pepsi Doza </span>
-                        <span></span>
-                    </li>
+                   
                     </li>
                 </ul>
             </section>
             <br>
+            <hr>
+            <br>
 
             <!-- Sectiunea Bauturi Alcoolice -->
             <section class="bg-[#1e1e1e] rounded-xl shadow-lg p-6">
-                <h3 class="text-3xl font-semibold text-[#D4AF37] mb-6 border-b border-[#D4AF37] pb-2 text-center">Bauturi Alcoolice</h3>
+                <h2 class="great-vibes text-4xl text-center text-gold mb-4">Bere</h2>
                 <ul class="space-y-4">
                     <li class="flex justify-between items-center text-lg">
-                        <span>Golden Brau</span>
+                        <span>Corona 0.33l</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Heineken</span>
+                        <span>Heineken 0.33l</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Birra Moretti</span>
+                        <span>Peroni 0.33l</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Amstel</span>
+                        <span>Amstel,Birra Moretti,Golden Brau </span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Ciuc Rad Lam/Lime</span>
+                        <span>Ciuc Rad Lam/Zmr</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
-                        <span>Ciuc Rad Zme/Lamo</span>
+                        <span>Desperados</span>
                         <span></span>
                     </li>
                     <li class="flex justify-between items-center text-lg">
@@ -459,6 +467,135 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                    
                 </ul>
             </section>
+
+            <br>
+            <hr> 
+            <br>  
+            <section>
+                 <section class="bg-[#1e1e1e] rounded-xl shadow-lg p-6">
+                <h2 class="great-vibes text-4xl text-center text-gold mb-4">Bere fara alcool</h2>
+                <ul class="space-y-4">
+                    <li class="flex justify-between items-center text-lg">
+                        <span>Heineken  0.33l</span>
+                        <span></span>
+                    </li>                
+            </section> 
+            <br>
+            <hr> 
+            <br>   
+            <section>
+                    <section class="bg-[#1e1e1e] rounded-xl shadow-lg p-6">
+                    <h2 class="great-vibes text-4xl text-center text-gold mb-4">Tării</h2>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center text-lg">
+                            <span>Chivas Regal </span>
+                            <span></span>
+                        </li> 
+                        <li class="flex justify-between items-center text-lg">
+                            <span>Ballantines</span>
+                            <span></span>
+                        </li> 
+                        <li class="flex justify-between items-center text-lg">
+                            <span>J-B</span>
+                            <span></span>
+                        </li> 
+                         <li class="flex justify-between items-center text-lg">
+                            <span>Jack Daniel`s</span>
+                            <span></span>
+                        </li> 
+                         <li class="flex justify-between items-center text-lg">
+                            <span>Jack Daniel`s Single</span>
+                            <span></span>
+                        </li> 
+                         <li class="flex justify-between items-center text-lg">
+                            <span>Absolut</span>
+                            <span></span>
+                        </li> 
+                         <li class="flex justify-between items-center text-lg">
+                            <span>Stalinskaya</span>
+                            <span></span>
+                        </li> 
+                         <li class="flex justify-between items-center text-lg">
+                            <span>Finlandia</span>
+                            <span></span>
+                        </li> 
+                         <li class="flex justify-between items-center text-lg">
+                            <span>Brancoveanu</span>
+                            <span></span>
+                        </li> 
+                         <li class="flex justify-between items-center text-lg">
+                            <span>Sheridan Lichior</span>
+                            <span></span>
+                        </li> 
+
+                    </ul>
+            </section>
+            <br>
+            <hr>
+            <br>
+            <section>
+                    <section class="bg-[#1e1e1e] rounded-xl shadow-lg p-6">
+                    <h2 class="great-vibes text-4xl text-center text-gold mb-4">Sampanie</h2>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center text-lg">
+                            <span>Moet-Chandon 0.75 </span>
+                            <span></span>
+                        </li> 
+                        <li class="flex justify-between items-center text-lg">
+                            <span>Zarea Royal 0.75</span>
+                            <span></span>
+                        </li> 
+                        <li class="flex justify-between items-center text-lg">
+                            <span>Zarea Crystal Roze 0.75</span>
+                            <span></span>
+                        </li> 
+                    </ul>
+            </section>
+            <br>
+            <hr>
+            <br>
+            <section>
+                 <section class="bg-[#1e1e1e] rounded-xl shadow-lg p-6">
+                    <h2 class="great-vibes text-4xl text-center text-gold mb-4">Vinuri</h2>
+                    <ul class="space-y-4">
+                        <li class="flex justify-between items-center text-lg">
+                            <span>Negru de Purcari 0.75 </span>
+                            <span></span>
+                        </li> 
+                          <li class="flex justify-between items-center text-lg">
+                            <span>Purcari 1827 Viorica 0.75</span>
+                            <span></span>
+                        </li> 
+                          <li class="flex justify-between items-center text-lg">
+                            <span>Cricova Vintage 0.75 </span>
+                            <span></span>
+                        </li> 
+                          <li class="flex justify-between items-center text-lg">
+                            <span>Cricova Chateau Roze 0.75 </span>
+                            <span></span>
+                        </li> 
+                          <li class="flex justify-between items-center text-lg">
+                            <span>Fet De Tohani Roze 0.75  </span>
+                            <span></span>
+                        </li> 
+                          <li class="flex justify-between items-center text-lg">
+                            <span>Fet De Tohani Alb 0.75 </span>
+                            <span></span>
+                        </li> 
+                          <li class="flex justify-between items-center text-lg">
+                            <span>Cotnari Bus Rose 0.75 </span>
+                            <span></span>
+                        </li> 
+                          <li class="flex justify-between items-center text-lg">
+                            <span>Grasa de Cotnari 0.75 </span>
+                            <span></span>
+                        </li> 
+                          <li class="flex justify-between items-center text-lg">
+                            <span>Sange de Taur Roze 0.75 </span>
+                            <span></span>
+                        </li> 
+
+
         </main>
     </div>
     </main>
