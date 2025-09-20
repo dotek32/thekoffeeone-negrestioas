@@ -504,6 +504,77 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                 updateSizeDisplay();
             }
         });
+    
+    // ... (existing script code for slideshow and mobile menu) ...
+
+    // Logic for the slideshow
+    let slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("mySlides");
+        let dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].classList.remove("active-dot");
+        }
+        if (slides[slideIndex - 1]) {
+            slides[slideIndex - 1].style.display = "block";
+        }
+        if (dots[slideIndex - 1]) {
+            dots[slideIndex - 1].classList.add("active-dot");
+        }
+    }
+
+    // Automatic slideshow (optional)
+    setInterval(() => {
+        plusSlides(1);
+    }, 5000);
+
+    // NEW: Swipe functionality for mobile devices
+    let touchstartX = 0;
+    let touchendX = 0;
+
+    const slideshowContainer = document.querySelector('.slideshow-container');
+
+    slideshowContainer.addEventListener('touchstart', e => {
+        touchstartX = e.changedTouches[0].screenX;
+    });
+
+    slideshowContainer.addEventListener('touchend', e => {
+        touchendX = e.changedTouches[0].screenX;
+        handleGesture();
+    });
+
+    function handleGesture() {
+        if (touchendX < touchstartX) {
+            // Swiped left
+            plusSlides(1);
+        }
+
+        if (touchendX > touchstartX) {
+            // Swiped right
+            plusSlides(-1);
+        }
+    }
+
 
     </script>
 </body>
