@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ro">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aura - Contact</title>
+    <!-- Încarcă Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Încarcă fonturile elegante -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap"
+        rel="stylesheet">
+    <!-- Încarcă Font Awesome pentru iconițe -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+       <style>
+        body {
+            font-family: 'Cormorant Garamond', serif;
+            color: #E6E6E6;
+            /* Text alb-argintiu */
+            background-color: #121212;
+            /* Fundal negru profund */
+            overflow-x: hidden;
+        }
+
+        .great-vibes {
+            font-family: 'Great Vibes', cursive;
+        }
+
+        .text-gold {
+            color: #D4AF37;
+        }
+
+        .card {
+            background-color: #1e1e1e;
+        }
+
+        /* Stiluri pentru preloader */
+        #preloader {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #000000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            transition: opacity 1s ease-in-out;
+        }
+
+      #preloader-logo {
+            animation: spin 2s linear infinite, growAndShrink 2s ease-in-out infinite;
+        }
+          /* Animația de rotație pentru logo-ul principal */
+        @keyframes logo-spin {
+            from {
+                transform: flip(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        /* Stiluri pentru modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 200;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #D4AF37;
+        }
+          .logo-rotate {
+            animation: logo-spin 4s linear infinite;
+        }
+        hr {
+            border: 1px solid #edd6d6;
+            margin: 40px 0;
+        }
+       
+       
+
+    </style>
+</head>
+
+
+<body class="bg-[#121212] font-['Cormorant Garamond'] text-[#E6E6E6] overflow-x-hidden">
+<!-- Antet (Navigare) -->
+ <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KTSWKFFZ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+    <header class="bg-black text-gold-200 p-4 md:p-8 lg:p-16 fixed w-full z-10 rounded-b-xl shadow-lg">
+        <nav class="container mx-auto flex justify-between items-center">
+            <!-- Logo cu animație de rotație -->
+            <a href="home.html" class="flex items-center space-x-2">
+                <img src="images/logo.jpg" alt="Aura Logo"
+                    class="h-20 w-20 rounded-full logo-rotate">
+                <span class="text-2xl font-bold great-vibes">The Koffee One</span>
+            </a>
+            <!-- Meniu Desktop -->
+            <div class="hidden md:flex space-x-6 text-xl">
+                <a href="home.html" class="hover:text-gold transition duration-300">Home</a>
+                <a href="despre noi.html"hover:text-gold transition duration-300">Despre Noi</a>
+                <a href="meniu.html" class="hover:text-gold transition duration-300">Meniul Nostru</a>
+            </div>
+
+            <!-- Buton meniu mobil -->
+            <button id="mobile-menu-button" class="md:hidden text-gray-400 hover:text-gold">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </nav>
+    </header>
+    <br>
+    <br>    
+
+    <!-- Meniu mobil (ascuns) -->
+    <div id="mobile-menu"
+        class="fixed inset-y-0 right-0 w-64 bg-black z-20 transform translate-x-full transition-transform duration-300 ease-in-out md:hidden flex flex-col items-center py-10 rounded-l-xl shadow-lg">
+        <button id="close-menu-button" class="absolute top-4 right-4 text-gray-400 hover:text-gold">
+            <i class="fas fa-times text-2xl"></i>
+        </button>
+        <a href="home.html" class="flex items-center space-x-2 mb-8">
+            <img src="images/logo.jpg" alt="Aura Logo" class="h-10 w-10 rounded-full logo-rotate">
+            <span class="text-2xl font-bold great-vibes">The Koffee One</span>
+        </a>
+        <a href="home.html" class="block py-2 text-xl hover:text-gold transition duration-300">Home</a>
+        <a href="despre noi.html" class="block py-2 text-xl hover:text-gold transition duration-300">Despre Noi</a>
+        <a href="meniu.html"block py-2 text-xl hover:text-gold transition duration-300">Meniu</a>
+    </div>
+
+
+    <main class="pt-24 pb-12 px-4 md:px-8 lg:px-16">
+        <div class="container mx-auto">
+            <h1
+                class="great-vibes text-4xl md:text-6xl text-center text-amber-500 mb-6 md:mb-12 hover:text-amber-400 transition-colors">
+                Contact</h1>
+
+            <!-- Grid pentru așezarea conținutului pe desktop -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+
+                <!-- Secțiunea pentru detalii de contact -->
+                <div class="bg-[#1e1e1e] p-6 rounded-xl shadow-lg">
+                    <h2 class="text-3xl font-semibold mb-4 text-center text-amber-500">Detalii de contact</h2>
+                    <p class="text-center mb-6">Ne poți găsi oricând. Suntem gata să-ți răspundem la întrebări sau
+                        să-ți primim comanda.</p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-map-marker-alt text-amber-500 text-xl"></i>
+                            <span class="text-gray-300">Strada Victoriei, Nr. 80A, Negresti-Oas</span>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-phone-alt text-amber-500 text-xl"></i>
+                            <a href="tel:+40745123456" class="text-gray-300 hover:underline">+40 745 123 456</a>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <i class="fas fa-envelope text-amber-500 text-xl"></i>
+                            <a href="mailto:contact@aura.ro"
+                                class="text-gray-300 hover:underline">thekoffeeone@yahoo.com</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Secțiunea pentru imagine (vizibilă doar pe ecrane mari) -->
+                <!-- Am ascuns această secțiune pe mobil cu clasa 'hidden md:block' -->
+                <div class="hidden md:block">
+                    <div class="relative w-full h-80 rounded-xl overflow-hidden shadow-lg">
+                        <img src="images/afara.jpg" alt="Imaginea locației" class="w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black opacity-40"></div>
+                    </div>
+                </div>
+
+                <!-- Secțiunea pentru imagine (vizibilă doar pe ecrane mici) și detalii de contact -->
+                <!-- Am adăugat logica de modal pe această secțiune și am ascuns-o pe desktop cu 'md:hidden' -->
+                <div class="flex flex-col space-y-8 md:hidden">
+                    <!-- Imagine reprezentativă cu modal -->
+                    <div class="relative w-full rounded-xl overflow-hidden shadow-lg">
+                        <img src="images/afara.jpg" alt="Imaginea locației"
+                            class="w-full h-full object-cover cursor-pointer" id="myImg">
+                    </div>
+
+                    <!-- Modal pentru mărirea imaginii -->
+                    <div id="myModal" class="modal">
+                        <span class="close">&times;</span>
+                        <img class="modal-content" id="img01">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Secțiunea pentru hartă -->
+            <div class="mt-8 bg-[#1e1e1e] p-6 rounded-xl shadow-lg">
+                <h3 class="text-2xl font-semibold mb-4 text-center text-amber-500">Locația Noastră</h3>
+                <!-- Aici poți integra o hartă Google Maps, de exemplu -->
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2676.7722477288485!2d23.41678987599803!3d47.86337397021157!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4749f972b2c34c4d%3A0x6a5d4d3c6c0b3d87!2sBistri%C8%9Ba%2C%20Rom%C3%A2nia!5e0!3m2!1sen!2sro!4v1690185123456!5m2!1sen!2sro"
+                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" class="rounded-lg"></iframe>
+            </div>
+
+            <!-- Formular de contact -->
+            <div class="bg-[#1e1e1e] p-6 rounded-xl shadow-lg mt-8">
+                <h2 class="text-3xl font-semibold mb-4 text-center text-amber-500">Trimite-ne un mesaj</h2>
+                <form id="contact-form" action="https://formspree.io/f/your-form-id" method="POST"
+                    class="space-y-4 max-w-lg mx-auto">
+                    <div>
+                        <label for="nume" class="block text-gray-400">Nume</label>
+                        <input type="text" id="nume" name="nume"
+                            class="w-full p-2 rounded-lg bg-[#2a2a2a] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                            required>
+                    </div>
+                    <div>
+                        <label for="email" class="block text-gray-400">Email</label>
+                        <input type="email" id="email" name="email"
+                            class="w-full p-2 rounded-lg bg-[#2a2a2a] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                            required>
+                    </div>
+                    <div>
+                        <label for="mesaj" class="block text-gray-400">Mesaj</label>
+                        <textarea id="mesaj" name="mesaj" rows="4"
+                            class="w-full p-2 rounded-lg bg-[#2a2a2a] border border-gray-700 focus:outline-none focus:ring-2 focus:ring-amber-500"
+                            required></textarea>
+                    </div>
+                    <button type="submit"
+                        class="w-full bg-amber-500 text-white p-3 rounded-lg font-semibold hover:bg-amber-600 transition-colors">Trimite</button>
+                    <!-- Mesaj de succes ascuns -->
+                    <div id="success-message"
+                        class="hidden bg-green-500 text-white text-center p-3 rounded-lg transition-opacity duration-500 opacity-0">
+                        Mesajul tău a fost trimis cu succes!
+                    </div>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-[#1e1e1e] p-8 text-center mt-12">
+        <div class="container mx-auto">
+            <div class="flex justify-center space-x-6 mb-4">
+                <a href="https://www.facebook.com/profile.php?id=61580465053283" class="text-gray-400 hover:text-amber-500 social-icon"><i
+                        class="fab fa-facebook-f text-2xl"></i></a>
+                <a href="https://www.instagram.com/the_koffee_one/" class="text-gray-400 hover:text-amber-500 social-icon"><i
+                        class="fab fa-instagram text-2xl"></i></a>
+               
+            </div>
+            <p class="text-gray-500 text-sm">
+                &copy; 2024 Aura - Cafe & Lounge. Toate drepturile rezervate.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Logica pentru modal
+        var modal = document.getElementById("myModal");
+        var img = document.getElementById("myImg");
+        var modalImg = document.getElementById("img01");
+
+        if (img && modal && modalImg) {
+            img.onclick = function () {
+                modal.style.display = "block";
+                modalImg.src = this.src;
+            }
+        }
+
+        var span = document.getElementsByClassName("close")[0];
+
+        if (span) {
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+        }
+
+        // Ascunde preloader-ul după un anumit timp și afișează conținutul paginii
+        window.addEventListener('load', () => {
+            const preloader = document.getElementById('preloader');
+            const body = document.body;
+
+            setTimeout(() => {
+                if (preloader) {
+                    preloader.style.display = 'none';
+                }
+                body.style.visibility = 'visible';
+                body.style.opacity = '1';
+            }, 2500); // Durata totală a animației
+        });
+
+        // Gestionează meniul mobil
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeMenuButton = document.getElementById('close-menu-button');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.remove('translate-x-full');
+            });
+        }
+
+        if (closeMenuButton && mobileMenu) {
+            closeMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.add('translate-x-full');
+            });
+        }
+
+        // Închiderea meniului când se dă clic pe un link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu) {
+                    mobileMenu.classList.add('translate-x-full');
+                }
+            });
+        });
+
+        // Logica pentru trimiterea formularului
+        const form = document.getElementById('contact-form');
+        const successMessage = document.getElementById('success-message');
+
+        if (form) {
+            form.addEventListener('submit', async (e) => {
+                // Previne reîncărcarea paginii
+                e.preventDefault();
+
+                // Ascunde orice mesaj de succes anterior
+                successMessage.classList.add('hidden', 'opacity-0');
+
+                const formData = new FormData(form);
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: formData,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    // Formularul a fost trimis cu succes
+                    successMessage.classList.remove('hidden');
+                    setTimeout(() => {
+                        successMessage.classList.remove('opacity-0');
+                    }, 10); // Așteaptă un pic pentru a declanșa tranziția
+                    form.reset(); // Golește formularul
+                } else {
+                    // Afișează o eroare
+                    console.error('Eroare la trimiterea formularului:', response.statusText);
+                    // Afișează o eroare în UI în loc de alert()
+                    const errorMessageElement = document.createElement('div');
+                    errorMessageElement.textContent = 'A apărut o eroare. Te rog să încerci din nou.';
+                    errorMessageElement.className = 'bg-red-500 text-white text-center p-3 rounded-lg mt-4';
+                    form.appendChild(errorMessageElement);
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>
+
